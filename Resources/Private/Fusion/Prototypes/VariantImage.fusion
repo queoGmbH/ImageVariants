@@ -1,0 +1,21 @@
+prototype(Qweb.ImageVariants:VariantImageUri) {
+    @class = 'Qweb\\ImageVariants\\Fusion\\VariantImageUriImplementation'
+    variant = NULL
+    @exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
+}
+
+# ImageTag object works exactly the same way as image ViewHelper in the Neos.Media package
+prototype(Qweb.ImageVariants:VariantImageTag) < prototype(Neos.Fusion:Tag) {
+    asset = 'pass-the-media-asset'
+    variant = NULL
+    @context.asset = ${this.asset}
+    @context.variant = ${this.variant}
+
+    tagName = 'img'
+    attributes {
+        src = Qweb.ImageVariants:VariantImageUri {
+            asset = ${asset}
+            variant = ${variant}
+        }
+    }
+}

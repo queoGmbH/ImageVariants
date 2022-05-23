@@ -1,0 +1,18 @@
+{
+    "name": "qweb/image-variants",
+    "description": "",
+    "type": "neos-package",
+    "require": {
+        "neos/neos": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qweb\\ImageVariants\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Qweb.ImageVariants"
+        }
+    }
+}
